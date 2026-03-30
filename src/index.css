@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bangers&family=Permanent+Marker&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-arcade: "Press Start 2P", system-ui;
+  --font-display: "Bangers", system-ui;
+  --color-sf-red: #ff0000;
+  --color-sf-yellow: #ffcc00;
+  --color-sf-orange: #ff6600;
+  --color-sf-blue: #0033cc;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-arcade;
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+  }
+}
+
+.arcade-text-shadow {
+  text-shadow: 4px 4px 0px #ff0000, -2px -2px 0px #0033cc;
+}
+
+.vs-text {
+  font-family: 'Bangers', cursive;
+  font-size: 8rem;
+  background: linear-gradient(to bottom, #ffcc00 0%, #ff6600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(4px 4px 0px #000);
+}
+
+.pixel-border {
+  border: 4px solid #fff;
+  box-shadow: 8px 8px 0px #333;
+}
+
+.pixel-border-yellow {
+  border: 4px solid #ffcc00;
+  box-shadow: 8px 8px 0px #664400;
+}
+
+.pixel-border-red {
+  border: 4px solid #ff0000;
+  box-shadow: 8px 8px 0px #440000;
+}
+
+.health-bar-container {
+  height: 24px;
+  background: #333;
+  border: 2px solid #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.health-bar-fill {
+  height: 100%;
+  background: linear-gradient(to bottom, #ffcc00, #ff6600);
+  transition: width 0.3s ease-out;
+}
+
+.game-canvas {
+  image-rendering: pixelated;
+  background: #000;
+  border: 4px solid #fff;
+}
+
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.1s infinite;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+  border-color: #ffcc00;
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.insert-coin {
+  animation: flash 1s infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #000;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ff0000;
+  border: 2px solid #333;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ffcc00;
+}
