@@ -5,7 +5,7 @@ Retro browser arcade with three competitive modes:
 - `Code Clash`
 - `Arcade Fight`
 
-Designed for deployment at `https://arcade.nealfrazier.tech`.
+Designed for deployment at `https://sf-arcade.nealfrazier.tech`.
 
 ## Stack
 
@@ -68,7 +68,7 @@ Social assets are included:
 - [`public/og-image.svg`](./public/og-image.svg)
 - [`public/og-image.png`](./public/og-image.png)
 
-`index.html` includes Open Graph + Twitter metadata targeting `https://arcade.nealfrazier.tech/og-image.png`.
+`index.html` includes Open Graph + Twitter metadata targeting `https://sf-arcade.nealfrazier.tech/og-image.png`.
 
 ## Git Hygiene
 
